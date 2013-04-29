@@ -1,0 +1,2 @@
+.well
+  view App.TwittListView contentBinding="controller"

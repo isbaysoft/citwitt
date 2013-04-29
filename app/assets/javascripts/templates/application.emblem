@@ -1,0 +1,18 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.brand href="#" | TH Admin
+      .nav-collapse.collapse
+        .registrationContainer
+          input type="text" id="login"
+          input type="password" id="pwd"
+          input type="password" id="confirm-pwd"
+        p.navbar-text.pull-right
+          | Logged in as
+          a.btn.btn-primary{action 'login'} Edit
+        ul.nav
+          li.active
+            a href="#" | Users
+
+.container
+  = outlet

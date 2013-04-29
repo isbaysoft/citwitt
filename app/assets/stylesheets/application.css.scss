@@ -11,3 +11,20 @@
  *= require_self
  *= require_tree .
  */
+
+@import "compass";
+
+@import "compass/css3";
+@import "compass/reset";
+@import "compass/utilities";
+
+@import "bootstrap";
+
+
+.registrationContainer {
+  position: absolute;
+  top: 120px;
+  right: 20px;
+  width: 200px;
+  height: 150px;
+}
