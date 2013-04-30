@@ -1,6 +1,6 @@
 .well
   h1 List of favorites news
-
+= controller
 ul: each controller
   li
     h1 000000000000
