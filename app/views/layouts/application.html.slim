@@ -9,6 +9,5 @@ html
       = tag('meta', :name => 'authentication_token', :content => true)
       = tag('meta', :name => 'current_user_id', :content => current_user.id)
   body
-    = link_to 'twittttt', user_omniauth_authorize_path(:twitter)
     #body-wrap
       = yield

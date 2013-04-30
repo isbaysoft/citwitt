@@ -1,11 +1,18 @@
 Citwitt::Application.routes.draw do
   # get "omniauth_callbacks/twitter"
+  root to: "homes#index"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  root to: "homes#index"
 
-  resources :twitts
+  scope "/api" do
+    resources :twitts
+    resources :users, only: [:show]
+    resources :favorites
+  end
+
+  match "*path" => "homes#index"
+
 
   # get "dashboard/index"
 

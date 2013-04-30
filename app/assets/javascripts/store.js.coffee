@@ -1,4 +1,5 @@
-App.Adapter = DS.RESTAdapter.extend()
+App.Adapter = DS.RESTAdapter.extend
+  namespace: 'api'
 
 DS.Adapter.map 'App.Twitt',
   user: {embedded: 'always'}

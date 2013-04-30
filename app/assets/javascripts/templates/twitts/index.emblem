@@ -1,2 +1,2 @@
-.well
+table.table.table-striped
   view App.TwittListView contentBinding="controller"

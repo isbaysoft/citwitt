@@ -1,0 +1,7 @@
+td
+  img src=view.content.user.profileImageUrl
+td
+  = view.content.text
+td
+  a.btn.btn-primary{action 'favorite' view.content} Add
+

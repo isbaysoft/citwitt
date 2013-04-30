@@ -1,4 +1,0 @@
-.row
-  .span1
-  .span9= view.content.text
-br

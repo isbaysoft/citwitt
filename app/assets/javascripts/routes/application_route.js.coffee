@@ -4,8 +4,4 @@ App.Router.reopen
 
 App.Router.map ->
   @resource 'twitts', path: '/'
-
-App.TwittsRoute = Ember.Route.extend
-  model: -> App.Twitt.find()
-  setupController: (controller, model) ->
-    controller.set('content', model)
+  @resource 'favorites'
