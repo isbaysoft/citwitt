@@ -1,1 +1,1 @@
-App.ApplicationView = Ember.View.extend();
+App.ApplicationView = Ember.View.extend()

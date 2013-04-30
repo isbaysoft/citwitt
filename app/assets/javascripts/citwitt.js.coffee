@@ -3,15 +3,12 @@ window.App = Ember.Application.createWithMixins
   authenticationTokenName: 'auth_token'
 
   ready: ->
-    @authenticationToken = $('meta[name="authentication_token"]').attr('content')
-    $('#body-wrap').hide()
     @start()
-    $('#body-wrap').fadeIn('slow')
 
   start: ->
     @jQueryInit()
 
   jQueryInit: ->
     # Add a account token token to all AJAX requests
-    # $.ajaxPrefilter (options, originalOptions, xhr) =>
-    #   xhr.setRequestHeader 'X-Authentication-Token', @authenticationToken
+    console.log 'jquure init'
+

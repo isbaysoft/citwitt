@@ -1,4 +1,4 @@
-App.TwittsController = Ember.ArrayController.extend()
+App.TwittsController = Ember.ArrayController.extend
   itemController: 'twitt'
 
 App.TwittController = Ember.ObjectController.extend()

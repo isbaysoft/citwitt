@@ -6,13 +6,14 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'omniauth'
 gem 'twitter'
+gem 'omniauth-twitter'
 gem 'devise'
 gem 'slim'
 gem 'bootstrap-sass', '~> 2.3.1.0'
 gem "ember-rails"
 gem 'emblem-rails'
-gem 'omniauth-twitter'
 
 # Gems used only for assets and not required
 # in production environments by default.
