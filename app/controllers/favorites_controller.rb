@@ -3,13 +3,11 @@ class FavoritesController < AuthorizedController
   respond_to :json
 
   def index
-    favorites = current_user.favorites.all
-    respond_with favorites
+    respond_with current_user.twitter_favorites
   end
 
   def create
-    favorite = current_user.favorites.create params[:favorite]
-    respond_with favorite
+    respond_with current_user.twitter_favorite(params[:favorite][:twitter_id]), location: root_url
   end
 
 end

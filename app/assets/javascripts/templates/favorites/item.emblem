@@ -1,2 +1,5 @@
-td hello
-td world
+td
+  img src=view.content.user.profileImageUrl
+td
+  == view.content.text
+

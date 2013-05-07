@@ -9,7 +9,13 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :provider, :uid
 
-  has_many :favorites
+  delegate :favorite, :favorites, to: 'twitter_client', prefix: 'twitter'
+
+
+
+  def twitter_client
+    Twitter.client
+  end
 
   def self.find_or_create_from_oauth(auth)
     # trying find by provider and uid
@@ -51,10 +57,6 @@ class User < ActiveRecord::Base
     self.password_confirmation = password
     self.provider = auth['provider']
     self.uid = auth['uid']
-  end
-
-  def as_json options = {}
-    super only: [:id, :email], include: :favorites
   end
 
 end

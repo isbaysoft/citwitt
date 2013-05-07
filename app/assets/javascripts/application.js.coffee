@@ -10,4 +10,7 @@
 #= require citwitt
 #= require ember_require
 
+# plugins
+#= require humane/humane
+
 #= require_tree .
