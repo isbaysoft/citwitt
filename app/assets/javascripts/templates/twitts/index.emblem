@@ -1,2 +1,3 @@
 table.table.table-striped
-  view App.TwittListView contentBinding="controller"
+  tbody
+    view App.TwittListView contentBinding="controller"

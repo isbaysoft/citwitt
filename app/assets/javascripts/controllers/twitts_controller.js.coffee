@@ -6,6 +6,7 @@ App.TwittsController = Ember.ArrayController.extend
     t.set 'twitterId', v.get('idStr')
     t.save()
 
+
   didCreate: ->
     humane.log "Twitt was added successfully"
 

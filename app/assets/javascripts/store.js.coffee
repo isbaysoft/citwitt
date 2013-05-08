@@ -1,5 +1,7 @@
 App.Adapter = DS.RESTAdapter.extend
   namespace: 'api'
+  serializer: DS.RESTSerializer.extend
+    primaryKey: (type) -> return 'id_str'
 
 DS.Adapter.map 'App.Twitt',
   user: {embedded: 'always'}

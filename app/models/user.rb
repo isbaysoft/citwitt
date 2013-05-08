@@ -9,26 +9,36 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :provider, :uid
 
-  delegate :favorite, :favorites, to: 'twitter_client', prefix: 'twitter'
-
-
+  delegate :unfavorite, :favorite, :favorites, to: 'twitter_client', prefix: 'twitter'
 
   def twitter_client
-    Twitter.client
+    @twitter ||= Twitter::Client.new(oauth_token: auth_credentials_token, oauth_token_secret: auth_credentials_secret)
+  end
+
+  def apply_credentials auth
+    self.auth_credentials_token = auth.credentials.token
+    self.auth_credentials_secret = auth.credentials.secret
   end
 
   def self.find_or_create_from_oauth(auth)
     # trying find by provider and uid
     user = find_by_provider_and_uid auth['provider'], auth['uid']
-    return user unless user.nil?
+    if user
+      user.apply_credentials auth
+      return user
+    end
 
     # trying find by email
     email = build_email_from_oauth auth
     user = find_or_initialize_by_provider_and_email provider: auth['provider'], email: email
-    return user if user.persisted?
+    if user.persisted?
+      user.apply_credentials auth
+      return user
+    end
 
     # creating new user
     user.apply_oauth auth
+    user.apply_credentials auth
     user.save
     user
   end

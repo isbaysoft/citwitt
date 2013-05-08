@@ -3,5 +3,5 @@ td
 td
   == view.content.text
 td
-  a.btn.btn-primary{action 'favorite' view.content} Add
+  a.btn.btn-primary{action 'favorite' view.content} Favorite
 

@@ -2,4 +2,9 @@ td
   img src=view.content.user.profileImageUrl
 td
   == view.content.text
+td
+  log view.content
+td
+  a.btn.btn-primary{action 'unfavorite' view.content} Unfavorite
+  a.btn.btn-primary{action 'remove' view.content} Remove
 
