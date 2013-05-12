@@ -3,5 +3,9 @@ App.FavoritesView = Ember.View.extend
 
 App.FavoritesListView = Ember.CollectionView.extend
   tagName: 'tbody'
-  itemViewClass: Ember.View.extend
-    templateName: 'favorites/item'
+  itemViewClass: 'App.FavoriteItemView'
+
+App.FavoriteItemView = Ember.View.extend
+  templateName: 'favorites/item'
+
+

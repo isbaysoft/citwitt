@@ -3,7 +3,3 @@ App.Favorite = DS.Model.extend
   user: DS.belongsTo 'App.TwittUser', {embedded: 'always'}
   twitterId: DS.attr 'string'
   idStr: DS.attr 'string'
-
-  didDelete: (a)->
-    console.log a
-

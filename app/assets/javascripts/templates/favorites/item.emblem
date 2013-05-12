@@ -3,8 +3,6 @@ td
 td
   == view.content.text
 td
-  log view.content
-td
   a.btn.btn-primary{action 'unfavorite' view.content} Unfavorite
-  a.btn.btn-primary{action 'remove' view.content} Remove
+  a.btn.btn-primary{action 'remove' view.content target=view.content} Remove
 

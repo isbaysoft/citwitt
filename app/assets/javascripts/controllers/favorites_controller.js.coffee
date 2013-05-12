@@ -3,12 +3,21 @@ App.FavoritesController = Ember.ArrayController.extend
 
   remove: (v)->
     @content.removeObject(v)
-
-  didDelete: ->
-    alert '1'
+    # v.get('store').commit()
 
   unfavorite: (v)->
-    v.deleteRecord()
-    v.get('store').commit()
+    console.log v
+    console.log v.content
+    # @content.removeObject(v)
+    # v.unloadRecord()
+    # @store.commit()
 
-App.FavoriteController = Ember.ObjectController.extend()
+App.FavoriteController = Ember.ObjectController.extend
+
+  remove: (tabItem) ->
+    console.log 1
+    store = @get('store');
+    store.transaction();
+    tabItem.deleteRecord();
+    store.commit();
+
