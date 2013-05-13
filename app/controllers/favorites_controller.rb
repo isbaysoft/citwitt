@@ -1,6 +1,6 @@
 class FavoritesController < AuthorizedController
 
-  respond_to :json
+  respond_to :json, :html
 
   def index
     respond_with current_user.twitter_favorites

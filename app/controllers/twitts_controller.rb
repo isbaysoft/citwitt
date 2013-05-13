@@ -1,10 +1,11 @@
 # coding: utf-8
 class TwittsController < ApplicationController
 
-  respond_to :json
+  respond_to :json, :html
 
   def index
-    respond_with Twitter.user_timeline("@ciklum", count:3)
+    @twitts = Twitter.user_timeline("@ciklum", count:3)
+    respond_with @twitts
   end
 
 end

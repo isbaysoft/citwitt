@@ -1,8 +1,0 @@
-td
-  img src=view.content.user.profileImageUrl
-td
-  == view.content.text
-td
-  a.btn.btn-primary{action 'unfavorite' view.content} Unfavorite
-  a.btn.btn-primary{action 'remove' view.content target=view.content} Remove
-
