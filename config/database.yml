@@ -4,15 +4,18 @@ default: &default
   encoding: unicode
   pool: 5
   username: postgres
-  password: ruby
+  password: postgres
 
 development:
   <<: *default
   database: citwitt_dev
 
-test:
+test: &test
   <<: *default
   database: citwitt_test
 
 production:
   database: citwitt
+
+cucumber:
+  <<: *test

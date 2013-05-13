@@ -1,8 +1,1 @@
-- @twitts.map do |twitt|
-  .row
-    .span1= image_tag twitt.profile_image_url
-    .span7
-      div
-        span.pull-right= twitt.created_at.strftime('%e %B')
-        h4= twitt.user.name
-      p= twitt.text
+= render partial: 'shared/twitt', collection: @twitts

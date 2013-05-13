@@ -3,8 +3,11 @@ Citwitt::Application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resources :twitts
-  resources :favorites
+  resources :twitts do
+    resources :favorites, only: [:create]
+  end
+
+  resources :favorites, only: [:index, :destroy]
 
   # get "dashboard/index"
 

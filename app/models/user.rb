@@ -2,17 +2,20 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  devise :rememberable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :provider, :uid
 
-  delegate :unfavorite, :favorite, :favorites, to: 'twitter_client', prefix: 'twitter'
+  delegate  :unfavorite, :favorite, :favorites, to: 'twitter_client', prefix: 'twitter'
 
   def twitter_client
     @twitter ||= Twitter::Client.new(oauth_token: auth_credentials_token, oauth_token_secret: auth_credentials_secret)
+  end
+
+  def url
+    "https://twitter.com/#{twitter_client.user.screen_name}"
   end
 
   def apply_credentials auth

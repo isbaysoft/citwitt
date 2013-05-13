@@ -1,0 +1,9 @@
+.row id="fav_#{twitt.id}"
+  .span1= image_tag twitt.profile_image_url
+  .span7
+    div
+      span.pull-right= twitt.created_at.strftime('%e %B')
+      h4= twitt.user.name
+    p= twitt.text
+    = link_to 'unfavorite', favorite_path(twitt.id), class: 'btn btn-mini btn-primary pull-right', method: :delete, remote: true
+  hr
