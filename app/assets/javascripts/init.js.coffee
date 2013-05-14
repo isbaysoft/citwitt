@@ -1,8 +1,8 @@
 $ ->
   $(document).ajaxStart ->
-    console.log '1111'
+    $('#overlay').show()
 
   $(document).ajaxStop ->
-    console.log '2222'
+    $('#overlay').hide()
 
 

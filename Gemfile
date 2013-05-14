@@ -34,7 +34,10 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
-  gem 'cucumber-rails'
+  gem 'shoulda'
+  gem "rspec-rails"
+  gem 'cucumber-rails', :require => false
+  gem 'capybara'
   gem 'fakeweb'
 end
 

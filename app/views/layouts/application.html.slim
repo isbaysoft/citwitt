@@ -6,6 +6,7 @@ html
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
+    #overlay
     .container-narrow
       .masthead
         ul.nav.nav-pills.pull-right
@@ -15,17 +16,21 @@ html
         h3.muted Test
       hr
         .jumbotron
-          h1 Super awesome marketing speak!
-          - if signed_in?
-            .well
+          .well
+            h6 Repository
+            | on heroku deployed this branch - https://github.com/isbaysoft/citwitt/tree/ad
+            br
+            | some ember version - https://github.com/isbaysoft/citwitt
+            br
+            br
+            - if signed_in?
               = link_to current_user.url do
                 = image_tag current_user.twitter_client.user.profile_image_url
                 br
                 br
                 = current_user.twitter_client.user.screen_name
-          - else
-            = link_to 'Sign in via Twitter', user_omniauth_authorize_path(:twitter), class: 'btn btn-large btn-success'
-
+            - else
+              = link_to 'Sign in via Twitter', user_omniauth_authorize_path(:twitter), class: 'btn btn-large btn-success'
         hr
           .row.marketing
             = yield

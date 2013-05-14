@@ -1,12 +1,12 @@
 Feature: Show ciklum's twitts
   I Should list of twitts
   And I should see my favorits
+  When I signed in can use favorites feature
 
   Scenario: Twitts
-    When I go to the homepage
-    And I see title of page is test
-    And I see list of twitts within 100 rows
-  #   And I should see "Metro"
-  #   And I should see "Rabbit"
-
-  Scenario: Favorits
+    Given I have opened homepage
+    Then I see title of page is "test"
+    And I should see at least one twitt
+    And I follow "Sign in via Twitter"
+    And Twitter authorizes me
+    Then I should see "Logged in as

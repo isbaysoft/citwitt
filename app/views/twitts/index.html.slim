@@ -1,1 +1,4 @@
-= render partial: 'shared/twitt', collection: @twitts
+div= link_to 'also 20 twitts', twitts_path(page:@curent_page.succ), class: 'btn btn-primary', remote: true
+br
+#twitts_container
+  = render partial: 'shared/twitt', collection: @twitts
